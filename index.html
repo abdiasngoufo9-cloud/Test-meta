@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Eligibility Check</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="print-header" style="display:none"></div>
+<div id="print-footer" style="display:none"></div>
+
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="logo-mark">f</div>
+      <div class="logo-text">Meta <span>Eligibility</span></div>
+    </div>
+    <div class="header-tag">Vérificateur Officiel</div>
+  </div>
+</header>
+
+<div class="main">
+  <div class="hero">
+    <h1>Vérifiez l'éligibilité de votre<br>page <em>Facebook</em></h1>
+    <p>Analysez instantanément si votre page remplit les critères officiels Meta pour la monétisation.</p>
+  </div>
+
+  <div class="program-grid">
+    <div class="prog-card selected" onclick="selectProg(this, 'instream')" id="prog-instream">
+      <div class="prog-icon">🎬</div>
+      <div class="prog-name">In-Stream Ads</div>
+      <div class="prog-desc">Publicités dans vos vidéos Facebook</div>
+    </div>
+    <div class="prog-card" onclick="selectProg(this, 'stars')" id="prog-stars">
+      <div class="prog-icon">⭐</div>
+      <div class="prog-name">Facebook Stars</div>
+      <div class="prog-desc">Pourboires virtuels de vos fans</div>
+    </div>
+    <div class="prog-card" onclick="selectProg(this, 'reels')" id="prog-reels">
+      <div class="prog-icon">🎭</div>
+      <div class="prog-name">Reels Play Bonus</div>
+      <div class="prog-desc">Bonus pour vos Reels performants</div>
+    </div>
+  </div>
+
+  <div class="search-card">
+    <div class="search-label">Lien de la page Facebook</div>
+    <div class="input-row">
+      <input type="url" class="url-input" id="pageUrl"
+        placeholder="https://www.facebook.com/VotrePageIci"
+        onkeydown="if(event.key==='Enter') analyze()">
+      <button class="btn-check" id="btnAnalyze" onclick="analyze()">
+        <span>🔍</span> Analyser
+      </button>
+    </div>
+    <div class="hint">
+      💡 Exemples : facebook.com/NomDePage · facebook.com/profile.php?id=123456
+    </div>
+  </div>
+
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <p>Analyse de la page en cours...</p>
+    <div class="step" id="loadingStep">Extraction des métadonnées</div>
+  </div>
+
+  <div id="results"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
